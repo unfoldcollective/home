@@ -1,0 +1,22 @@
+{
+  "name": "node-omniparser",
+  "version": "0.1.0",
+  "description": "parses omnigraffle files into json, and a graph of nodes and relationships",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "graph",
+    "omnigraffle",
+    "json"
+  ],
+  "author": "javier abanses",
+  "license": "ISC",
+   "dependencies":{
+       "graffle-json": "0.0.3",
+       "underscore": "~1.7.0",
+       "underscore-contrib": "~0.3.0",
+       "simple-plist": "0.0.2"
+   }
+}

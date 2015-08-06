@@ -1,0 +1,121 @@
+@import '../helpers/D.js'
+@import '../helpers/underscore-jstalk.js'
+@import '../helpers/AppSandboxFileAccess.js'
+
+var D = _D();
+
+function generate(do_export) {
+
+    do_export = do_export || false;
+    var fsm = data,
+        nodeById = {};
+
+    var base = selection[0],
+        ab_width = 100,
+        ab_height = 100,
+        gap_x = 700
+
+    var i = 0,
+        clone
+
+    for (; i < fsm.nodes.length; i += 1) {
+        clone = [base duplicate];
+        var clone_frame = [clone frame]
+
+        clone_frame.addX(gap_x * (i + 1))
+        clone.name = fsm.nodes[i].data.name
+
+        nodeById[fsm.nodes[i].uuid] = fsm.nodes[i];
+    }
+
+    var groupedRels = {};
+
+    _.each(fsm.relationships, function (r) {
+        var f = r.from;
+        if (!groupedRels[r.from]) {
+            groupedRels[r.from] = [r];
+        } else {
+            groupedRels[r.from].push(r);
+        }
+    });
+
+    //log(groupedRels)
+
+    _.each(groupedRels, function (r, k) {
+        var origin = nodeById[k].data.name;
+
+        var artb = D.getLayerOfName(origin);
+            var ls = [artb layers];
+            var length = [ls count];
+            var button = ls.array()[length - 1];
+
+            var count = 0;//index doesn't seem to wotk in _.each
+            _.each(r,function(rr,index,p){
+        //        //				log('adding button for... ' + rr.data + ' ' +count )
+                var button2 = [button duplicate];
+                log(rr.data.text)
+                button2.name = rr.data.text.replace(/[:/]/g,'_');
+                var frame = [button2 frame]
+                var frameHeight = [frame height]
+                log(frameHeight);
+
+                frameHeight = ((frameHeight +10) * count );
+                [frame subtractY:frameHeight]
+                var label = [button2 layers].array()[1];
+                //				log('::::::::::::::::      ' + [label name])
+                [label setStringValue:(rr.data.text)]
+                count +=1;
+            });
+        //    //remove the template button
+            [artb removeLayer:button]
+    });
+
+    // if( do_export ){
+    //         exportAllArtBoards();
+    //     }
+// exportAllArtBoards();
+    // [doc exportPDFBook:nil]
+}
+
+
+function exportAllArtBoards() {
+    var fileTypes = ['png'];
+    var artboardExcludeList = ["Portrait"];
+    var allArtBoards = [doc artboards];
+
+
+    if (in_sandbox()) {
+        log('yay in sanbox.....')
+        sandboxAccess.accessFilePath_withBlock_persistPermission(D.document_path, function () {
+            var init = allArtBoards.array()[1]
+            log('>>')
+                [doc
+            saveArtboardOrSlice:init
+            toFile:(D.document_path + "init" + "." + fileTypes[0])
+            ]
+
+            _.each(allArtBoards, function (l) {
+
+                if (l.name() != artboardExcludeList[0]) {
+                    log(D.document_path + l.name() + "." + fileTypes[0]);
+                    [doc saveArtboardOrSlice
+                :
+                    l
+                    toFile:(D.document_path + l.name() + "." + fileTypes[0])
+                ]
+                    ;
+
+                }
+
+            });
+        }, true)
+    } else {
+        log('not in sandbox')
+        //[doc saveArtboardOrSlice:l toFile:(D.document_path + l.name() + "." + fileTypes[0])];
+    }
+
+
+}
+
+
+var data =

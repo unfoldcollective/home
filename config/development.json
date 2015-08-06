@@ -1,0 +1,16 @@
+{
+  "paths":{
+    "source":"./",
+    "destination":"dist"
+  },
+  "uglify": false,
+  "strict": false,
+  "breakOnError": false,
+  "sourceMaps":true,
+  "minifyCss":false,
+  "imageMin":false,
+  "server": {
+    "url": "dev.example.com",
+    "port": "8080"
+  }
+}

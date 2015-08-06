@@ -1,0 +1,11 @@
+{
+  "paths":{
+    "source":"./",
+    "destination":"dist"
+  },
+  "uglify" : false,
+  "strict" : false,
+  "breakOnError" : true ,
+  "imageMin":true,
+  "minifyCss":true
+}
