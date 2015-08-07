@@ -3,29 +3,30 @@
 let React = require('react'),
     _ = require('lodash');
 
+
+require('gsap-react-plugin');
+const TweenLite = window.TweenLite;
 /*
  *
  * */
-require('./app.less');
-
-
-
+//require('./ExpanderDiv.less');
 /*
  *
  * */
 
-let pipelineMixin = require('./pipelineMixin.js');
+let ExpanderDiv = React.createClass({
 
-//let Layer2d = require('./components/layer2d/layer2d');
-//let Menu = require('./menu');
 
-let ExpanderDiv = require('./components/expanderDiv/expanderDiv');
-
-let App = React.createClass({
-
+    expand: function () {
+        let square1 = this.refs.square1.getDOMNode(); //or use jQuery's $('#photo')
+        TweenLite.to(this, .5, {state: {width: window.innerWidth, height: window.innerHeight}});
+    }
     // The object returned by this method sets the initial value of this.state
-    getInitialState: function () {
-         return {};
+    , getInitialState: function () {
+        return {
+            width: 200
+            , height: 50
+        };
     },
 
     // The object returned by this method sets the initial value of this.props
@@ -39,41 +40,44 @@ let App = React.createClass({
     // Inspects this.state and this.props create the markup
     // Should never update this.state or this.props
     render: function () {
-        //console.log('%c %s', 'color: green; background-color: white;', 'app::render() ');
-        //<pre>{JSON.stringify(this.state.val, null, 4)}</pre>
-        //let points = this.state.val._pointerMoves;
-        //points = _.chain(points)
-        //    .takeRight(100)
-        //    .map(function (p) {
-        //        return {x: p.x + 20, y: p.y - 10};
-        //    })
-        //    .value();
 
-        /*<div>
-         <Layer2d points={points} width={this.state.val._windowResizes.width} height={this.state.val._windowResizes.height / 3 * 2}/>
+        const square = {
+            width: this.state.width,
+            height: this.state.height
+        };
 
-         </div>*/
+        const red = {
+            backgroundColor: 'red'
+        };
 
+        const centeredText = {
+            textAlign: 'center'
+        };
 
+        const leftAlignedText = {
+            textAlign: 'left'
+        };
 
-        /*<div ref='square2' style={_.merge({}, red, square, leftAlignedText, absolutePositioned)}>
-         asdasd
-         </div>*/
+        const absolutePositioned = {
+            position: 'absolute'
+        };
+
+        const usesPointerCursor = {
+            cursor: 'pointer'
+        };
         return (
-            <div className='App'>
-                <ExpanderDiv></ExpanderDiv>
-                <ExpanderDiv></ExpanderDiv>
-                <ExpanderDiv></ExpanderDiv>
-                <ExpanderDiv></ExpanderDiv>
-
+            <div className='ExpanderDiv'>
+                <div ref='square1'
+                    onClick={this.expand}
+                    style={_.merge({}, red, square, leftAlignedText, usesPointerCursor)}>
+                    <span>asdasd</span>
+                </div>
             </div>
-
         );
     },
 
-
     // An array of objects each of which can augment the lifecycle methods
-    mixins: [pipelineMixin],
+    mixins: [],
 
     // Functions that can be invoked on the component without creating instances
     statics: {
@@ -86,13 +90,11 @@ let App = React.createClass({
     // Invoked once before first render
     componentWillMount: function () {
         // Calling setState here does not cause a re-render
-
-        //console.log('%c %s', 'color: green; background-color: white;', 'app::componentWillMount() ');
     },
 
     // Invoked once after the first render
     componentDidMount: function () {
-
+        // You now have access to this.getDOMNode()
     },
 
     // Invoked whenever there is a prop change
@@ -115,7 +117,6 @@ let App = React.createClass({
     // Called IMMEDIATELY BEFORE a render
     componentWillUpdate: function (nextProps, nextState) {
         // You cannot use this.setState() in this method
-
     },
 
     // Called IMMEDIATELY AFTER a render
@@ -128,7 +129,4 @@ let App = React.createClass({
 
 });
 
-module.exports = App;
-
-
-
+module.exports = ExpanderDiv;
