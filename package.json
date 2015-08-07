@@ -30,6 +30,7 @@
     "less-loader": "^2.2.0",
     "lodash": "^3.7.0",
     "lodash-deep": "^1.6.0",
+    "material-colors": "^1.0.0",
     "pixi": "^0.3.1",
     "raw-loader": "^0.5.1",
     "react": "^0.13.2",
