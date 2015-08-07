@@ -36,7 +36,9 @@ let commonStyles = {
 };
 
 let decoration = {
-    borderBottom: '1px solid'
+    //borderBottom: '1px solid'
+    position: '<absolute></absolute>'
+
 };
 
 
