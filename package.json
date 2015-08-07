@@ -33,6 +33,7 @@
     "pixi": "^0.3.1",
     "raw-loader": "^0.5.1",
     "react": "^0.13.2",
+    "react-bootstrap": "^0.24.3",
     "react-hot-loader": "^1.2.5",
     "react-router": "^0.13.3",
     "react-router-proxy-loader": "^0.3.0",

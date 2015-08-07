@@ -9,23 +9,19 @@ let React = require('react'),
 require('./app.less');
 
 
-
 /*
  *
  * */
 
 let pipelineMixin = require('./pipelineMixin.js');
 
-//let Layer2d = require('./components/layer2d/layer2d');
-//let Menu = require('./menu');
-
-let ExpanderDiv = require('./components/expanderDiv/expanderDiv');
+var Alert = require('react-bootstrap/lib/Alert');
 
 let App = React.createClass({
 
     // The object returned by this method sets the initial value of this.state
     getInitialState: function () {
-         return {};
+        return {};
     },
 
     // The object returned by this method sets the initial value of this.props
@@ -39,32 +35,26 @@ let App = React.createClass({
     // Inspects this.state and this.props create the markup
     // Should never update this.state or this.props
     render: function () {
-        //console.log('%c %s', 'color: green; background-color: white;', 'app::render() ');
-        //<pre>{JSON.stringify(this.state.val, null, 4)}</pre>
-        //let points = this.state.val._pointerMoves;
-        //points = _.chain(points)
-        //    .takeRight(100)
-        //    .map(function (p) {
-        //        return {x: p.x + 20, y: p.y - 10};
-        //    })
-        //    .value();
-
-        /*<div>
-         <Layer2d points={points} width={this.state.val._windowResizes.width} height={this.state.val._windowResizes.height / 3 * 2}/>
-
-         </div>*/
 
 
 
-        /*<div ref='square2' style={_.merge({}, red, square, leftAlignedText, absolutePositioned)}>
-         asdasd
-         </div>*/
         return (
-            <div className='App'>
-                <ExpanderDiv></ExpanderDiv>
-                <ExpanderDiv></ExpanderDiv>
-                <ExpanderDiv></ExpanderDiv>
-                <ExpanderDiv></ExpanderDiv>
+            <div className='App container'>
+                <div className="row">
+                    <div className="col-md-6">
+                        <Alert>dadasdas</Alert>
+                        <Alert>dadasdas</Alert>
+                        <Alert>dadasdas</Alert>
+                        <Alert>dadasdas</Alert>
+                        <Alert>dadasdas</Alert>
+                        <Alert>dadasdas</Alert>
+                    </div>
+                    <div className="col-md-6">
+                        <Alert bsStyle='warning'>
+                            WHATCH OUT YOU MUPPET
+                        </Alert>
+                    </div>
+                </div>
 
             </div>
 
