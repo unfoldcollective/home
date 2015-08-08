@@ -15,6 +15,7 @@ require('./app.less');
 let pipelineMixin = require('./pipelineMixin.js');
 
 let Layer2d = require('./components/layer2d/layer2d');
+let WelcomeGreeter = require('./components/welcomeGreeter/welcomeGreeter');
 
 let App = React.createClass({
 
@@ -44,7 +45,7 @@ let App = React.createClass({
         //    })
         //    .value();
 
-        console.log('app::render() ', points);
+        // console.log('app::render() ', points);
 
 
         return (
@@ -54,29 +55,6 @@ let App = React.createClass({
                     <div className="row">
                         <div className="col-md-6">
                             <div className='text-center'>
-                                <div className='row'>
-                                    <div className='col-md-4 col-md-offset-4'>
-                                        <h1>
-                                            <span className='double-border'>unfold</span>
-                                        </h1>
-                                    </div>
-                                </div>
-
-
-                                <div className='row'>
-                                    <div className='col-md-4 col-md-offset-4'>
-                                        <h2>Welcome</h2>
-                                    </div>
-                                </div>
-
-                                <div className='row mainContent'>
-
-                                        <p>
-                                            Congue a
-                                            <a href='#'>vitae justo</a>
-                                            condimentum dapibus nisl cubilia vestibulum fermentum primis cubilia vestibulum adipiscing tempus elit a adipiscing a ut suscipit viverra adipiscing a. Placerat parturient auctor suscipit adipiscing a nullam suspendisse vestibulum sed blandit molestie a parturient ante leo scelerisque aliquet a leo leo blandit a scelerisque a luctus suspendisse mollis suspendisse.
-                                        </p>
-                                </div>
 
                                 <div className='row'>
                                         <a href='workshop.html' id='cta-workshop' className='center-block button button--pipaluk button--text-thick button--text-upper'>
@@ -94,6 +72,7 @@ let App = React.createClass({
                                         </span>
                                     </div>
                                 </div>
+                                <WelcomeGreeter/>
                             </div>
                         </div>
                         <div className="col-md-6">
