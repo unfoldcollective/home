@@ -7,6 +7,7 @@ let React = require('react'),
  *
  * */
 require('./app.less');
+require('./less/buttons.less');
 
 /*
  *
@@ -57,12 +58,6 @@ let App = React.createClass({
                             <div className='text-center'>
 
                                 <div className='row'>
-                                        <a href='workshop.html' id='cta-workshop' className='center-block button button--pipaluk button--text-thick button--text-upper'>
-                                            Check out workshop
-                                        </a>
-                                </div>
-
-                                <div className='row'>
                                     <div className='col-md-4 col-md-offset-4'>
                                         <span className='input input--chisato'>
                                             <input className='input__field input__field--chisato' type='text' id='input-22'/>
@@ -73,6 +68,7 @@ let App = React.createClass({
                                     </div>
                                 </div>
                                 <WelcomeGreeter/>
+                                <button className='center-block button button--pipaluk button--text-thick button--text-upper'>Check out workshop</button>
                             </div>
                         </div>
                         <div className="col-md-6">
