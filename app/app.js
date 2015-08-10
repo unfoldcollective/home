@@ -7,6 +7,7 @@ let React = require('react'),
  *
  * */
 require('./app.less');
+require('./less/buttons.less');
 
 /*
  *
@@ -15,6 +16,8 @@ require('./app.less');
 let pipelineMixin = require('./pipelineMixin.js');
 
 let Layer2d = require('./components/layer2d/layer2d');
+let WelcomeGreeter = require('./components/welcomeGreeter/welcomeGreeter');
+let MinimalForm = require('./components/minimalForm/minimalForm');
 
 let App = React.createClass({
 
@@ -44,8 +47,38 @@ let App = React.createClass({
         //    })
         //    .value();
 
-        console.log('app::render() ', points);
+        // console.log('app::render() ', points);
 
+        let formQuestions = [
+            {
+                label: 'leave your email to stay up to date',
+                name: 'MERGE0',
+                type: 'email',
+            },
+            {
+                label: 'your first name',
+                name: 'MERGE1',
+                type: 'text',
+            },
+            {
+                label: 'your last name',
+                name: 'MERGE2',
+                type: 'text',
+            }
+        ];
+
+        let extraInputs = [
+            {
+                type: 'hidden',
+                name: 'u',
+                value: '1148c6e6167970b60623693d2',
+            },
+            {
+                type: 'hidden',
+                name: 'id',
+                value: 'b342e4f2fa',
+            }
+        ];
 
         return (
             <div>
@@ -54,53 +87,12 @@ let App = React.createClass({
                     <div className="row">
                         <div className="col-md-6">
                             <div className='text-center'>
-                                <div className='row'>
-                                    <div className='col-md-4 col-md-offset-4'>
-                                        <h1>
-                                            <span className='double-border'>unfold</span>
-                                        </h1>
-                                    </div>
-                                </div>
-
-
-                                <div className='row'>
-                                    <div className='col-md-4 col-md-offset-4'>
-                                        <h2>Welcome</h2>
-                                    </div>
-                                </div>
-
-                                <div className='row mainContent'>
-
-                                        <p>
-                                            Congue a
-                                            <a href='#'>vitae justo</a>
-                                            condimentum dapibus nisl cubilia vestibulum fermentum primis cubilia vestibulum adipiscing tempus elit a adipiscing a ut suscipit viverra adipiscing a. Placerat parturient auctor suscipit adipiscing a nullam suspendisse vestibulum sed blandit molestie a parturient ante leo scelerisque aliquet a leo leo blandit a scelerisque a luctus suspendisse mollis suspendisse.
-                                        </p>
-                                </div>
-
-                                <div className='row'>
-                                        <a href='workshop.html' id='cta-workshop' className='center-block button button--pipaluk button--text-thick button--text-upper'>
-                                            Check out workshop
-                                        </a>
-                                </div>
-
-                                <div className='row'>
-                                    <div className='col-md-4 col-md-offset-4'>
-                                        <span className='input input--chisato'>
-                                            <input className='input__field input__field--chisato' type='text' id='input-22'/>
-                                            <label className='input__label input__label--chisato' htmlFor='input-22'>
-                                                <span className='input__label-content input__label-content--chisato'>Leave your email to stay up to date</span>
-                                            </label>
-                                        </span>
-                                    </div>
-                                </div>
+                                <WelcomeGreeter/>
+                                <button className='center-block button button--pipaluk button--text-thick button--text-upper'>Check out workshop</button>
                             </div>
+                            <MinimalForm className='MinimalForm' questions={formQuestions} extrainputs={extraInputs} progresscount={false} />
                         </div>
                         <div className="col-md-6">
-
-
-
-
 
                         </div>
                     </div>

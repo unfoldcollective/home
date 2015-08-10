@@ -11,18 +11,23 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script src="lib/modernizr.custom.js"></script>
 </head>
 <body>
 <div id="app">
 
 </div>
+
+
 <script type="text/javascript">
     // shim layer with setTimeout fallback
     window.requestAnimFrame = (function () {
@@ -44,6 +49,28 @@
 <script src="lib/gsap/minified/plugins/CSSPlugin.min.js"></script>
 <script src="lib/gsap/minified/easing/EasePack.min.js"></script>
 <script src="lib/gsap/minified/TweenLite.min.js"></script>
+
 <script src="bundle.js"></script>
+<script src="lib/classie.js"></script>
+<script src="lib/stepsForm.js"></script>
+<script>
+    var theForm = document.getElementById( 'theForm' );
+    new stepsForm( theForm, {
+        onSubmit : function( form ) {
+            // hide form
+            classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+
+            form.submit()
+            // or
+            // AJAX request (maybe show loading indicator while we don't have an answer..)
+            
+
+            // let's just simulate something...
+            var messageEl = theForm.querySelector( '.final-message' );
+            messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
+            classie.addClass( messageEl, 'show' );
+        }
+    } );
+</script>
 </body>
 </html>
