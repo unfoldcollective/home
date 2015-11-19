@@ -82,7 +82,7 @@ let App = React.createClass({
 
         return (
             <div>
-
+                {/*<img className='bgimg' src="./assets/img/model-in-hand-flipped.jpg" alt=""/>*/}
                 <div className='App container'>
                     <div className="row">
                         <div className="col-md-6">
@@ -90,7 +90,8 @@ let App = React.createClass({
                                 <WelcomeGreeter/>
                                 <button className='center-block button button--pipaluk button--text-thick button--text-upper'>Check out workshop</button>
                             </div>
-                            <MinimalForm className='MinimalForm' questions={formQuestions} extrainputs={extraInputs} progresscount={false} />
+                            <div>We share whats on our mind occasionally through our newsletter...</div>
+                            <MinimalForm className='MinimalForm' questions={formQuestions} extrainputs={extraInputs} progresscount={true} />
                         </div>
                         <div className="col-md-6">
 
