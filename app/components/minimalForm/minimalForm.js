@@ -12,7 +12,7 @@ var MinimalForm = React.createClass({
           {return (
             <li>
                 <span><label htmlFor={item.name}>{item.label}</label></span>
-                <input id={'q' + index} name={item.name} type={item.type}/>
+                <input id={'q' + index} name={item.name} type={item.type} placeholder={this.props.placeholder ? this.props.placeholder : ''}/>
             </li>
         ); }, this);
 

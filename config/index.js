@@ -18,6 +18,9 @@ var common = {
     module: {
         loaders: [
             {test: [/\.less$/, /\.css$/], loader: 'style-loader!css-loader!less-loader'},
+            { test: /\.css$/, loader: "style-loader!css-loader" },
+            { test: /\.png$/, loader: "url-loader?limit=100000" },
+            { test: /\.jpg$/, loader: "file-loader" },
             {
                 test: /\.(svg)$/,
                 loader: 'raw-loader'

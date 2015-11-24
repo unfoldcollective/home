@@ -6,7 +6,7 @@ let React = require('react'),
 /*
  *
  * */
-require('./app.less');
+require('./less/app.less');
 require('./less/buttons.less');
 
 /*
@@ -18,6 +18,7 @@ let pipelineMixin = require('./pipelineMixin.js');
 let Layer2d = require('./components/layer2d/layer2d');
 let WelcomeGreeter = require('./components/welcomeGreeter/welcomeGreeter');
 let MinimalForm = require('./components/minimalForm/minimalForm');
+let Logo = require('./components/logo/logo');
 
 let App = React.createClass({
 
@@ -51,19 +52,9 @@ let App = React.createClass({
 
         let formQuestions = [
             {
-                label: 'leave your email to stay up to date',
+                label: '',
                 name: 'MERGE0',
                 type: 'email',
-            },
-            {
-                label: 'your first name',
-                name: 'MERGE1',
-                type: 'text',
-            },
-            {
-                label: 'your last name',
-                name: 'MERGE2',
-                type: 'text',
             }
         ];
 
@@ -81,24 +72,26 @@ let App = React.createClass({
         ];
 
         return (
-            <div>
-                {/*<img className='bgimg' src="./assets/img/model-in-hand-flipped.jpg" alt=""/>*/}
-                <div className='App container'>
-                    <div className="row">
-                        <div className="col-md-6">
-                            <div className='text-center'>
-                                <WelcomeGreeter/>
-                                <button className='center-block button button--pipaluk button--text-thick button--text-upper'>Check out workshop</button>
+                <div className='App'>
+                    <section className="leftside">
+                        <div className='welcomeText row mainContent'>
+                            {/*<h1>Welcome</h1>*/}
+                            <p>
+                            We are a collective exploring how emerging technology can support innovative forms of narrative.
+                            </p>
+                            <br/>
+                            <div className='newsletter'>
+                                <p>We share whats on our mind occasionally through our newsletter.</p>
+                                <MinimalForm className='MinimalForm' placeholder='Your email address' questions={formQuestions} extrainputs={extraInputs} progresscount={false} />
                             </div>
-                            <div>We share whats on our mind occasionally through our newsletter...</div>
-                            <MinimalForm className='MinimalForm' questions={formQuestions} extrainputs={extraInputs} progresscount={true} />
                         </div>
-                        <div className="col-md-6">
-
+                    </section>
+                    <section className='rightside'>
+                        <div className='text-center'>
+                            <Logo/>
                         </div>
-                    </div>
+                    </section>
                 </div>
-            </div>
         );
     },
 
