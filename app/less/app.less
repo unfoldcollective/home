@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600);
 
-@leftpart: 60%;
+@image-part: 40%;
 
 html {
   margin: 0;
@@ -33,19 +33,19 @@ html {
         text-decoration: none;
       }
       
-      .rightside, .leftside {
+      .image-side, .text-side {
         height: 100vh;
         padding: 8vh 6vw;
       }
       
-      .leftside {
-        width: @leftpart;
+      .text-side {
+        width: @image-part;
         float: right;
         position: relative;
       }
       
-      .rightside {
-        width: 100% - @leftpart;
+      .image-side {
+        width: 100% - @image-part;
         background-image: url(../img/LINK-07.jpg);
         background-size: cover;
         float: left;

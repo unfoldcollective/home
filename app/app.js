@@ -73,7 +73,7 @@ let App = React.createClass({
 
         return (
                 <div className='App'>
-                    <section className="leftside">
+                    <section className="text-side">
                         <div className='welcomeText row mainContent'>
                             {/*<h1>Welcome</h1>*/}
                             <p>
@@ -86,7 +86,7 @@ let App = React.createClass({
                             </div>
                         </div>
                     </section>
-                    <section className='rightside'>
+                    <section className='image-side'>
                         <div className='text-center'>
                             <Logo/>
                         </div>
