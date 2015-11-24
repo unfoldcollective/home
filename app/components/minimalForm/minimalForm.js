@@ -22,7 +22,7 @@ var MinimalForm = React.createClass({
         ); }, this);
 
         return (
-            <form id='theForm' className='simform' autoComplete='off' action='http://unfold.us11.list-manage1.com/subscribe/post' method='POST'>
+            <form id='theForm' className='simform' autoComplete='off' action='http://unfold.us11.list-manage1.com/subscribe/post' target="popupwindow" method='post' onsubmit="window.open('http://unfold.us11.list-manage1.com/subscribe/post', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
                 {extrainputs}
                 <div className='simform-inner'>
                     <ol className='questions'>
