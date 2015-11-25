@@ -15,8 +15,8 @@ require('./less/buttons.less');
 
 let pipelineMixin = require('./pipelineMixin.js');
 
-let Layer2d = require('./components/layer2d/layer2d');
-let WelcomeGreeter = require('./components/welcomeGreeter/welcomeGreeter');
+// let Layer2d = require('./components/layer2d/layer2d');
+// let WelcomeGreeter = require('./components/welcomeGreeter/welcomeGreeter');
 let MinimalForm = require('./components/minimalForm/minimalForm');
 let Logo = require('./components/logo/logo');
 
