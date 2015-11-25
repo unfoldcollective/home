@@ -19,6 +19,7 @@ let pipelineMixin = require('./pipelineMixin.js');
 // let WelcomeGreeter = require('./components/welcomeGreeter/welcomeGreeter');
 let MinimalForm = require('./components/minimalForm/minimalForm');
 let Logo = require('./components/logo/logo');
+let BGSlideshow = require('./components/bgslideshow/bgslideshow');
 
 let App = React.createClass({
 
@@ -87,14 +88,11 @@ let App = React.createClass({
                         </div>
                     </section>
                     <section className='image-side'>
-                        <div className='text-center'>
-                            <Logo/>
-                        </div>
+                        <BGSlideshow/>
                     </section>
                 </div>
         );
     },
-
 
     // An array of objects each of which can augment the lifecycle methods
     mixins: [pipelineMixin],
@@ -111,13 +109,13 @@ let App = React.createClass({
     componentWillMount: function () {
         // Calling setState here does not cause a re-render
 
-        console.log('%c %s', 'color: green; background-color: white;', 'app::componentWillMount() ');
+        // console.log('%c %s', 'color: green; background-color: white;', 'app::componentWillMount() ');
     },
 
     // Invoked once after the first render
     componentDidMount: function () {
         // You now have access to this.getDOMNode()
-        console.log('%c %s', 'color: green; background-color: white;', 'app::componentDidMount() ');
+        // console.log('%c %s', 'color: green; background-color: white;', 'app::componentDidMount() ');
     },
 
     // Invoked whenever there is a prop change

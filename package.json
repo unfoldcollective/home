@@ -27,6 +27,7 @@
     "gl-matrix": "^2.3.1",
     "gsap": "^1.17.0",
     "gsap-react-plugin": "^1.0.2",
+    "jquery": "^2.1.4",
     "less": "^2.5.0",
     "less-loader": "^2.2.1",
     "lodash": "^3.7.0",
