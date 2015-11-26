@@ -10,7 +10,7 @@
 		height: 100%;
 		background-size: cover;
 		
-		opacity: 0;
+		// opacity: 0;
 		-webkit-transition: opacity 1s;
 		-moz-transition: opacity 1s;
 		transition: opacity 1s;
@@ -18,11 +18,23 @@
 }
 
 .bicontrols {
+	font-family: FontAwesome;
 	position: absolute;
 	bottom: 5vh;
 	left: 50%;
 	transform: translateX(-50%);
 	span {
-		padding: 10px;
+		position: relative;
+		margin: 10px;
+		cursor: pointer;
+	}
+	.biplaypause {
+		font-size: 85%;
+	}
+	.bipause:before {
+		content: "\f04c";
+	}
+	.biplay:before {
+		content: "\f04b";
 	}
 }

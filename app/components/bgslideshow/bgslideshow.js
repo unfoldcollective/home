@@ -1,7 +1,8 @@
 'use strict';
 var React = require('react'),
     _ = require('lodash'),
-    $ = require('jquery');
+    $ = require('jquery'),
+    FontAwesome = require('react-fontawesome');
 
 
 require('./bgslideshow.less');
@@ -20,9 +21,9 @@ var BGSlideshow = React.createClass({
         </div>
           {this.props.controls ? (
             <div id="bicontrols" className="bicontrols">
-              <span className="biprev">prev</span>
-              <span className="bipause">pause</span>
-              <span className="binext">next</span>
+              <span className="biprev"><FontAwesome name='angle-left' /></span>
+              <span className="biplaypause bipause"></span>
+              <span className="binext"><FontAwesome name='angle-right' /></span>
             </div>
           ) : undefined}
       </div>
@@ -45,8 +46,8 @@ var BGSlideshow = React.createClass({
       initEvents();
     }
 
-    // show first item
-    $items.eq( current ).css( 'opacity', 1 );
+    // hide items except first
+    $('.fadein div:gt(0)').css( 'opacity', 0);
     if (isSlideshowActive) {
       startSlideshow();
     }
@@ -62,7 +63,6 @@ var BGSlideshow = React.createClass({
         };
 
       navigation.$navPlayPause.on( 'click', function() {
-        console.log('playpause click!!!');
         var $control = $( this );
         if( $control.hasClass( 'biplay' ) ) {
           $control.removeClass( 'biplay' ).addClass( 'bipause' );
