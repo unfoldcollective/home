@@ -104,7 +104,7 @@ let App = React.createClass({
                     </section>
                     <section className='image-side'>
                         <Logo/>
-                        <BGSlideshow images={slideImages} interval={5000} duration={1000}/>
+                        <BGSlideshow images={slideImages} interval={5000} duration={800} autoplay={true} controls={true}/>
                     </section>
                 </div>
         );

@@ -11,7 +11,6 @@ var Logo = React.createClass({
                     <span className='double-border'>Unfold</span>
                 </h1>
             </div>
-
         );
     }
 
