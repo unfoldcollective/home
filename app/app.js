@@ -72,6 +72,21 @@ let App = React.createClass({
             }
         ];
 
+        let slideImages = [
+            {
+                url: '/assets/img/1.jpg',
+                caption: 'Unfold worked on an amazing project',
+            },
+            {
+                url: '/assets/img/2.jpg',
+                caption: 'Unfold worked on an amazing project',
+            },
+            {
+                url: '/assets/img/3.jpg',
+                caption: 'Unfold worked on an amazing project',
+            },
+        ];
+
         return (
                 <div className='App'>
                     <section className="text-side">
@@ -88,7 +103,7 @@ let App = React.createClass({
                         </div>
                     </section>
                     <section className='image-side'>
-                        <BGSlideshow/>
+                        <BGSlideshow images={slideImages} interval={5000} duration={1000}/>
                     </section>
                 </div>
         );
