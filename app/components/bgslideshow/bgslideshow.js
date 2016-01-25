@@ -65,7 +65,7 @@ var BGSlideshow = React.createClass({
     }
 
     function initEvents () {
-      console.log('init Events!!!');
+      // console.log('init Events!!!');
 
       var $controls = $( '#bicontrols' ),
         navigation = {

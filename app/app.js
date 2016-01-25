@@ -74,16 +74,16 @@ let App = React.createClass({
 
         let slideImages = [
             {
-                url: '/assets/img/1.jpg',
-                caption: 'Unfold was commissioned by the Warwick Manufacturing Group to make tangible the concept of supply chains',
+                url: './assets/img/1.jpg',
+                caption: 'We were commissioned by the Warwick Manufacturing Group to make tangible the concept of supply chains',
             },
             {
-                url: '/assets/img/2.jpg',
-                caption: 'Unfold worked on amazing project 2',
+                url: './assets/img/2.jpg',
+                caption: 'We created a toolkit for Pohoda Festival to help them with the design of their festival. #DroneFlying #Photoscanning #3DPrinting',
             },
             {
-                url: '/assets/img/3.jpg',
-                caption: 'Unfold worked on amazing project 3',
+                url: './assets/img/3.jpg',
+                caption: 'We helped Fablab to tell the story of their maker community',
             },
         ];
 
