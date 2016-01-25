@@ -11,7 +11,12 @@ var BGSlideshow = React.createClass({
   render: function() {
     let slideshowImages = _.map(this.props.images, function (item, index)
       {return (
-        <div id={'bi-' + index} style={{backgroundImage: 'url(' + item.url + ')'}}></div>
+        <div id={'biimage-' + index} className='biimage' style={{backgroundImage: 'url(' + item.url + ')'}}></div>
+        ); }, this
+    );
+    let slideshowCaptions = _.map(this.props.images, function (item, index)
+      {return (
+        <div id={'bicaption-' + index} className='bicaption'>{item.caption}</div>
         ); }, this
     );
     return (
@@ -19,13 +24,18 @@ var BGSlideshow = React.createClass({
         <div className="fadein">
           {slideshowImages}
         </div>
-          {this.props.controls ? (
-            <div id="bicontrols" className="bicontrols">
-              <span className="biprev"><FontAwesome name='angle-left' /></span>
-              <span className="biplaypause bipause"></span>
-              <span className="binext"><FontAwesome name='angle-right' /></span>
-            </div>
-          ) : undefined}
+        {this.props.controls ? (
+          <div id="bicontrols" className="bicontrols">
+            <span className="biprev"><FontAwesome name='angle-left' /></span>
+            <span className="biplaypause bipause"></span>
+            <span className="binext"><FontAwesome name='angle-right' /></span>
+          </div>
+        ) : undefined}
+        {this.props.captions ? (
+          <div id="bicaptions" className="bicaptions">
+            {slideshowCaptions}
+          </div>
+        ) : undefined}
       </div>
     );
   },
@@ -37,6 +47,7 @@ var BGSlideshow = React.createClass({
     let duration = this.props.duration ? this.props.duration : 400;
     var isSlideshowActive = this.props.autoplay ? true : false,
       $items = $('.fadein').children( 'div' ),
+      $captions = $('.bicaption'),
       itemsCount = $items.length,
       slideshowtime,
       current;
@@ -48,6 +59,7 @@ var BGSlideshow = React.createClass({
 
     // hide items except first
     $('.fadein div:gt(0)').css( 'opacity', 0);
+    $('.bicaptions div:gt(0)').css( 'opacity', 0);
     if (isSlideshowActive) {
       startSlideshow();
     }
@@ -104,19 +116,11 @@ var BGSlideshow = React.createClass({
 
     function navigate (direction) {
       console.log(direction);
-      // $('.fadein :first-child').fadeOut(duration);
-
-      // if (direction === 'next') {
-      //   $('.fadein :first-child').next('div').fadeIn(duration)
-      //     .end().appendTo('.fadein');
-      // }
-      // else if (direction === 'prev') {
-      //   $('.fadein :last-child').fadeIn(duration)
-      //     .prependTo('.fadein');
-      // }
-
       // current item
       var $currentItem = $items.eq( current );
+      var $currentCaption = $('#bicaption-' + current);
+      console.log(current);
+      console.log($currentCaption);
 
       if( direction === 'next' ) {
         current = current < itemsCount - 1 ? ++current : 0;
@@ -127,9 +131,13 @@ var BGSlideshow = React.createClass({
 
       // new item
       var $newItem = $items.eq( current );
-      // show / hide items
+      var $newCaption = $('#bicaption-' + current);
+      // show / hide images
       $currentItem.css( 'opacity', 0 );
       $newItem.css( 'opacity', 1 );
+      // show / hide captions
+      $currentCaption.css( 'opacity', 0 );
+      $newCaption.css( 'opacity', 1 );
     }
   },
 });

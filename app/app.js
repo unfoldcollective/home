@@ -75,15 +75,15 @@ let App = React.createClass({
         let slideImages = [
             {
                 url: '/assets/img/1.jpg',
-                caption: 'Unfold worked on an amazing project',
+                caption: 'Unfold was commissioned by the Warwick Manufacturing Group to make tangible the concept of supply chains',
             },
             {
                 url: '/assets/img/2.jpg',
-                caption: 'Unfold worked on an amazing project',
+                caption: 'Unfold worked on amazing project 2',
             },
             {
                 url: '/assets/img/3.jpg',
-                caption: 'Unfold worked on an amazing project',
+                caption: 'Unfold worked on amazing project 3',
             },
         ];
 
@@ -91,7 +91,6 @@ let App = React.createClass({
                 <div className='App'>
                     <section className="text-side">
                         <div className='welcomeText row mainContent'>
-                            {/*<h1>Welcome</h1>*/}
                             <p>
                             We are a collective exploring how emerging technology can support innovative forms of narrative.
                             </p>
@@ -104,7 +103,7 @@ let App = React.createClass({
                     </section>
                     <section className='image-side'>
                         <Logo/>
-                        <BGSlideshow images={slideImages} interval={5000} duration={800} autoplay={true} controls={true}/>
+                        <BGSlideshow images={slideImages} interval={5000} duration={800} autoplay={true} controls={true} captions={true}/>
                     </section>
                 </div>
         );
