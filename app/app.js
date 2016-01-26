@@ -75,15 +75,15 @@ let App = React.createClass({
         let slideImages = [
             {
                 url: './assets/img/1.jpg',
-                caption: <div>We were commissioned by the Warwick Manufacturing Group to <a href="https://goo.gl/photos/KLRqr5jtWSaG7EtX8">make tangible the concept of supply chains</a></div>,
+                caption: <p>We were commissioned by the Warwick Manufacturing Group to <a href="https://goo.gl/photos/KLRqr5jtWSaG7EtX8">make tangible the concept of supply chains</a></p>,
             },
             {
                 url: './assets/img/2.jpg',
-                caption: <div>We 3D scanned Slovakia's biggest festival to <a href="https://goo.gl/photos/Rf5DWqbRsE1QGe5V6">create a spatial design toolkit</a></div>,
+                caption: <p>We 3D scanned Slovakia's biggest festival to <a href="https://goo.gl/photos/Rf5DWqbRsE1QGe5V6">create a spatial design toolkit</a></p>,
             },
             {
                 url: './assets/img/3.jpg',
-                caption: <div>We helped Fablab <a href="https://goo.gl/photos/YdTUcSpzHyTJqZ6HA">tell the story of their maker community</a></div>,
+                caption: <p>We helped Fablab <a href="https://goo.gl/photos/YdTUcSpzHyTJqZ6HA">tell the story of their maker community</a></p>,
             },
         ];
 
