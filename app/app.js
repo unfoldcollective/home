@@ -75,15 +75,15 @@ let App = React.createClass({
         let slideImages = [
             {
                 url: './assets/img/1.jpg',
-                caption: <div>{['We were commissioned by the Warwick Manufacturing Group to ', <a href="https://goo.gl/photos/KLRqr5jtWSaG7EtX8">make tangible the concept of supply chains</a>]}</div>,
+                caption: <div>We were commissioned by the Warwick Manufacturing Group to <a href="https://goo.gl/photos/KLRqr5jtWSaG7EtX8">make tangible the concept of supply chains</a></div>,
             },
             {
                 url: './assets/img/2.jpg',
-                caption: <div>{['We 3D scanned Slovakias biggest festival to ', <a href="https://goo.gl/photos/Rf5DWqbRsE1QGe5V6">create a spatial design toolkit</a>]}</div>,
+                caption: <div>We 3D scanned Slovakia's biggest festival to <a href="https://goo.gl/photos/Rf5DWqbRsE1QGe5V6">create a spatial design toolkit</a></div>,
             },
             {
                 url: './assets/img/3.jpg',
-                caption: <div>{['We helped Fablab tell ', <a href="https://goo.gl/photos/YdTUcSpzHyTJqZ6HA">the story of their maker community</a>]}</div>,
+                caption: <div>We helped Fablab <a href="https://goo.gl/photos/YdTUcSpzHyTJqZ6HA">tell the story of their maker community</a></div>,
             },
         ];
 
@@ -95,8 +95,18 @@ let App = React.createClass({
                     </section>
                     <section className="text-side">
                         <div className='welcomeText row mainContent'>
+                            <p className="standout">
+                                Unfold is a creative studio that imagines informed concepts and turns them into curious sensory experiences.
+                            </p>
                             <p>
-                            We are a collective exploring how emerging technology can support innovative forms of narrative.
+                                We employ techniques of interaction design, creative coding, artificial intelligence, digital fabrication, spatial design and scenography across a range of modalities. Through custom tools and rapid prototyping we push the boundaries of the possible.
+                            </p>
+                            <p>
+                                Previously we've drone-scanned Slovakia's biggest music festival to make a spatial design toolkit, created an unravelling supply chain installation for the Global Supply Chain Debate and there are more exciting projects to follow.
+                            </p>
+                            <br/>
+                            <p>
+                                We are always looking for new projects to get involved in. Not sure if we can solve a challange you're facing? Talk to us, the sky is the limit.
                             </p>
                             <br/>
                             <p>
