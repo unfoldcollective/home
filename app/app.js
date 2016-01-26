@@ -79,20 +79,30 @@ let App = React.createClass({
             },
             {
                 url: './assets/img/2.jpg',
-                caption: 'We created a toolkit for Pohoda Festival to help them with the design of their festival. #DroneFlying #Photoscanning #3DPrinting',
+                caption: 'We 3D scanned Slovakias biggest festival to create a spatial design toolkit',
             },
             {
                 url: './assets/img/3.jpg',
-                caption: 'We helped Fablab to tell the story of their maker community',
+                caption: 'We helped Fablab tell the story of their maker community',
             },
         ];
 
         return (
                 <div className='App'>
+                    <section className='image-side'>
+                        <Logo/>
+                        <BGSlideshow images={slideImages} interval={5000} duration={800} autoplay={true} controls={true} captions={true}/>
+                    </section>
                     <section className="text-side">
                         <div className='welcomeText row mainContent'>
                             <p>
                             We are a collective exploring how emerging technology can support innovative forms of narrative.
+                            </p>
+                            <br/>
+                            <p>
+                            Interested in working with us, or simply want to know more?
+                            <br/>
+                            <a href="mailto:hellounfoldcollective@gmail.com">Get in touch</a>.
                             </p>
                             <br/>
                             <div className='newsletter'>
@@ -100,10 +110,6 @@ let App = React.createClass({
                                 <MinimalForm className='MinimalForm' placeholder='Your email address' questions={formQuestions} extrainputs={extraInputs} progresscount={false} />
                             </div>
                         </div>
-                    </section>
-                    <section className='image-side'>
-                        <Logo/>
-                        <BGSlideshow images={slideImages} interval={5000} duration={800} autoplay={true} controls={true} captions={true}/>
                     </section>
                 </div>
         );

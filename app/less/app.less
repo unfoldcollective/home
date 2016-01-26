@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600);
 
-@image-part: 40%;
+@text-part: 30%;
 
 html {
   margin: 0;
@@ -10,7 +10,7 @@ html {
   body {
     height: 100%;
 
-    background-color: #311b92;
+    background-color: #14403E;
     color: #fff;
     //  font-weight: 400;
     font-size: 2em;
@@ -32,24 +32,12 @@ html {
         color: #ff6d00;
         text-decoration: none;
       }
-      
-      .image-side, .text-side {
-        height: 100vh;
-      }
-      
-      .text-side {
-        width: @image-part;
-        float: right;
-        position: relative;
-        padding: 8vh 6vw;
-      }
-      
+
       .image-side {
-        width: 100% - @image-part;
-        // background-image: url(../img/LINK-07.jpg);
-        // background-size: cover;
+        width: 100%;
+        height: 95vh;
         background-color: #666;
-        float: left;
+        // float: left;
         position: relative;
 
         .logo {
@@ -64,17 +52,33 @@ html {
           height: 100%;
         }
       }
-
-      .welcomeText {
+      
+      .text-side {
+        width: 100%;
+        height: 95vh;
+        // float: right;
         position: relative;
-        top: 50%;
-        transform: translateY(-55%);
-        // padding: 10%;
-        .newsletter {
-          margin-top: 3em;
-          font-size: 80%;
+        padding: 12vh 6vw;
+
+        .welcomeText {
+          position: relative;
+          margin: auto;
+          .newsletter {
+            margin-top: 3em;
+            margin-bottom: 2em;
+            font-size: 80%;
+          }
         }
       }
+      
+
     }
   }
+}
+
+// mobile first: now adjust for larger screens
+@media screen and (min-device-width: 568px) {
+  .welcomeText {
+    width: 60%;
+  } 
 }
