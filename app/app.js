@@ -79,7 +79,7 @@ let App = React.createClass({
             },
             {
                 url: './assets/img/2.jpg',
-                caption: <p>We 3D scanned Slovakia's biggest festival to <a href="https://goo.gl/photos/Rf5DWqbRsE1QGe5V6">create a spatial design toolkit</a></p>,
+                caption: <p>We 3D scanned Slovakia's biggest festival to <a href="https://goo.gl/photos/Rf5DWqbRsE1QGe5V6">create a custom spatial design toolkit</a></p>,
             },
             {
                 url: './assets/img/3.jpg',
@@ -108,7 +108,7 @@ let App = React.createClass({
                             <p>
                                 Interested in working with us, or simply want to know more?
                                 <br/>
-                                <a href="mailto:hellounfoldcollective@gmail.com">Get in touch</a>.
+                                Get in touch at <a href="mailto:hellounfoldcollective@gmail.com">hellounfoldcollective@gmail.com</a>.
                             </p>
                             <br/>
                             <div className='newsletter'>

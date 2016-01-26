@@ -59,7 +59,7 @@ var BGSlideshow = React.createClass({
 
     // hide items except first
     $('.fadein div:gt(0)').css( 'opacity', 0);
-    $('.bicaptions div:gt(0)').css( 'opacity', 0);
+    $('.bicaptions div:gt(0)').addClass('hidden');
     if (isSlideshowActive) {
       startSlideshow();
     }
@@ -136,8 +136,8 @@ var BGSlideshow = React.createClass({
       $currentItem.css( 'opacity', 0 );
       $newItem.css( 'opacity', 1 );
       // show / hide captions
-      $currentCaption.css( 'opacity', 0 );
-      $newCaption.css( 'opacity', 1 );
+      $currentCaption.addClass('hidden');
+      $newCaption.removeClass('hidden');
     }
   },
 });
