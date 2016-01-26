@@ -106,13 +106,9 @@ let App = React.createClass({
                             </p>
                             <br/>
                             <p>
-                                We are always looking for new projects to get involved in. Not sure if we can solve a challange you're facing? Talk to us, the sky is the limit.
-                            </p>
-                            <br/>
-                            <p>
-                            Interested in working with us, or simply want to know more?
-                            <br/>
-                            <a href="mailto:hellounfoldcollective@gmail.com">Get in touch</a>.
+                                Interested in working with us, or simply want to know more?
+                                <br/>
+                                <a href="mailto:hellounfoldcollective@gmail.com">Get in touch</a>.
                             </p>
                             <br/>
                             <div className='newsletter'>
