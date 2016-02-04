@@ -1,0 +1,88 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600);
+
+@text-part: 30%;
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+
+  body {
+    height: 100%;
+
+    background-color: #14403E;
+    color: #fff;
+    //  font-weight: 400;
+    font-size: 18px;
+    font-family: "Raleway", "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
+    .standout {
+      font-size: 21px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .App{
+      height: 100vh;
+      
+      a {
+        color: #ff9100;
+        text-decoration: none;
+        outline: none;
+      }
+      a:hover, a:focus {
+        color: #ff6d00;
+        text-decoration: none;
+      }
+
+      .image-side {
+        width: 100%;
+        height: 95vh;
+        background-color: #666;
+        // float: left;
+        position: relative;
+
+        .logo {
+          padding: 8vh 20px 20px 20px;
+          position: absolute;
+          z-index: 1;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .bgslideshow {
+          height: 100%;
+        }
+      }
+      
+      .text-side {
+        width: 100%;
+        // height: 95vh;
+        // float: right;
+        position: relative;
+        padding: 12vh 6vw;
+
+        .welcomeText {
+          position: relative;
+          margin: auto;
+          .newsletter {
+            margin-top: 3em;
+            margin-bottom: 2em;
+            font-size: 80%;
+          }
+        }
+      }
+      
+
+    }
+  }
+}
+
+// mobile first: now adjust for larger screens
+@media screen and (min-device-width: 568px) {
+  .welcomeText {
+    width: 60%;
+  } 
+}

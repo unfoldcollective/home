@@ -6,7 +6,8 @@ let React = require('react'),
 /*
  *
  * */
-require('./app.less');
+require('./less/app.less');
+require('./less/buttons.less');
 
 /*
  *
@@ -14,8 +15,11 @@ require('./app.less');
 
 let pipelineMixin = require('./pipelineMixin.js');
 
-let Layer2d = require('./components/layer2d/layer2d');
-let Menu = require('./menu');
+// let Layer2d = require('./components/layer2d/layer2d');
+// let WelcomeGreeter = require('./components/welcomeGreeter/welcomeGreeter');
+let MinimalForm = require('./components/minimalForm/minimalForm');
+let Logo = require('./components/logo/logo');
+let BGSlideshow = require('./components/bgslideshow/bgslideshow');
 
 let App = React.createClass({
 
@@ -45,15 +49,77 @@ let App = React.createClass({
         //    })
         //    .value();
 
+        // console.log('app::render() ', points);
+
+        let formQuestions = [
+            {
+                label: '',
+                name: 'MERGE0',
+                type: 'email',
+            }
+        ];
+
+        let extraInputs = [
+            {
+                type: 'hidden',
+                name: 'u',
+                value: '1148c6e6167970b60623693d2',
+            },
+            {
+                type: 'hidden',
+                name: 'id',
+                value: 'b342e4f2fa',
+            }
+        ];
+
+        let slideImages = [
+            {
+                url: './assets/img/1.jpg',
+                caption: <p>We were commissioned by the Warwick Manufacturing Group to <a target="_blank" href="https://goo.gl/photos/KLRqr5jtWSaG7EtX8">make tangible the concept of supply chains</a></p>,
+            },
+            {
+                url: './assets/img/2.jpg',
+                caption: <p>We 3D scanned Slovakia's biggest festival to <a target="_blank" href="https://goo.gl/photos/Rf5DWqbRsE1QGe5V6">create a custom spatial design toolkit</a></p>,
+            },
+            {
+                url: './assets/img/3.jpg',
+                caption: <p>We helped Fablab <a target="_blank" href="https://goo.gl/photos/YdTUcSpzHyTJqZ6HA">tell the story of their maker community</a></p>,
+            },
+        ];
 
         return (
-            <div>
-                <Layer2d points={points} width={this.state.val._windowResizes.width} height={this.state.val._windowResizes.height / 3 * 2}/>
-
-            </div>
+                <div className='App'>
+                    <section className='image-side'>
+                        <Logo/>
+                        <BGSlideshow images={slideImages} interval={5000} duration={800} autoplay={true} controls={true} captions={true}/>
+                    </section>
+                    <section className="text-side">
+                        <div className='welcomeText row mainContent'>
+                            <p className="standout">
+                                Unfold is a creative studio that imagines informed concepts and turns them into curious sensory experiences.
+                            </p>
+                            <p>
+                                We employ techniques of interaction design, creative coding, artificial intelligence, digital fabrication, spatial design and scenography across a range of modalities. Through custom tools and rapid prototyping we push the boundaries of the possible.
+                            </p>
+                            <p>
+                                Previously we've drone-scanned Slovakia's biggest music festival to make a spatial design toolkit, created an unravelling supply chain installation for the Global Supply Chain Debate and there are more exciting projects to follow.
+                            </p>
+                            <br/>
+                            <p>
+                                Interested in working with us, or simply want to know more?
+                                <br/>
+                                Get in touch at <a href="mailto:hellounfoldcollective@gmail.com">hellounfoldcollective@gmail.com</a>.
+                            </p>
+                            <br/>
+                            <div className='newsletter'>
+                                <p>We share whats on our mind occasionally through our newsletter.</p>
+                                <MinimalForm className='MinimalForm' placeholder='Your email address' questions={formQuestions} extrainputs={extraInputs} progresscount={false} />
+                            </div>
+                        </div>
+                    </section>
+                </div>
         );
     },
-
 
     // An array of objects each of which can augment the lifecycle methods
     mixins: [pipelineMixin],
@@ -70,13 +136,13 @@ let App = React.createClass({
     componentWillMount: function () {
         // Calling setState here does not cause a re-render
 
-        console.log('%c %s', 'color: green; background-color: white;', 'app::componentWillMount() ');
+        // console.log('%c %s', 'color: green; background-color: white;', 'app::componentWillMount() ');
     },
 
     // Invoked once after the first render
     componentDidMount: function () {
         // You now have access to this.getDOMNode()
-        console.log('%c %s', 'color: green; background-color: white;', 'app::componentDidMount() ');
+        // console.log('%c %s', 'color: green; background-color: white;', 'app::componentDidMount() ');
     },
 
     // Invoked whenever there is a prop change

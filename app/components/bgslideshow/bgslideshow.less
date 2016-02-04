@@ -1,0 +1,99 @@
+.fadein { 
+	position:relative; 
+	width: 100%;
+	height: 100%;
+	div.biimage {
+		position:absolute; 
+		left:0; 
+		top:0; 
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		
+		// opacity: 0;
+		-webkit-transition: opacity 1s;
+		-moz-transition: opacity 1s;
+		transition: opacity 1s;
+	}
+}
+
+.bicontrols {
+	z-index: 100;
+	font-family: FontAwesome;
+	font-size: 30px;
+	position: absolute;
+	bottom: 25%;
+	left: 50%;
+	transform: translateX(-50%);
+	span {
+		position: relative;
+		margin: 10px;
+		cursor: pointer;
+	}
+	.biplaypause {
+		font-size: 80%;
+	}
+	.bipause:before {
+		content: "\f04c";
+	}
+	.biplay:before {
+		content: "\f04b";
+	}
+}
+
+.bicaptions {
+	position: absolute;
+	width: 100%;
+	height: 25%;
+	text-align: center;
+	font-size: 85%;
+	bottom: 0;
+
+	// background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+	// background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%);
+	// background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%);
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#99000000',GradientType=0 );
+
+
+	background: rgba(255,255,255,0);
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(100%, rgba(0,0,0,0.8)));
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+	background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
+
+
+
+	
+	.bicaption {
+		position: absolute;
+		bottom: 0%;
+		width: 100%;
+		padding: 2vh 5vw;
+
+	}
+}
+
+// mobile first: now adjust for larger screens
+@media screen and (min-device-width: 360px) {
+	.bicontrols {
+		bottom: 15%;
+	}
+	.bicaptions {
+		height: 15%;
+	}
+}
+
+@media screen and (min-device-width: 560px) {
+	.bicontrols {
+		bottom: 10%;
+	}
+	.bicaptions {
+		// height: 10%;
+		.bicaption {
+			padding-bottom: 3vh;
+		}
+	}
+}
