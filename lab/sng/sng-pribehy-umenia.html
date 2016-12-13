@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+    <style>
+      @font-face {
+          font-family: 'gt_walsheim_regular';
+          src: url('https://s3.amazonaws.com/cocoapods/fonts/gt-walsheim-web.eot');
+          src: url('https://s3.amazonaws.com/cocoapods/fonts/gt-walsheim-web.eot"?#iefix') format('embedded-opentype'),
+               url('https://s3.amazonaws.com/cocoapods/fonts/gt-walsheim-web.woff') format('woff'),
+               url('https://s3.amazonaws.com/cocoapods/fonts/gt-walsheim-web.ttf') format('truetype'),
+               url('https://s3.amazonaws.com/cocoapods/fonts/gt-walsheim-web.svg#gt_walsheim_regular') format('svg');
+          font-weight: normal;
+          font-style: normal;
+      }
+
+      body {
+        font-family: 'gt_walsheim_regular', sans-serif;
+      }
+
+      #imagediv>a>div {
+        font-size: 30px !important;
+      }
+    
+
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+         // Create a popcorn instance by calling the Vimeo player plugin
+         var example = Popcorn.vimeo(
+         '#video',
+         'http://player.vimeo.com/video/130346650');
+         // example.play();
+         // add an image
+         example.image({
+           // seconds
+           start: 15,
+           // seconds
+           end: 22,
+           href: "http://www.webumenia.sk/dielo/SVK:SNG.A_336-50l?collection=24",
+           src: "http://www.webumenia.sk/images/diela/SNG/44/SVK_SNG.A_336-50l/SVK_SNG.A_336-50l.jpeg",
+           text: "Ján Svetlík - 1956",
+           target: "imagediv"
+         });
+         example.image({
+           // seconds
+           start: 22,
+           // seconds
+           end: 30,
+           href: "http://www.webumenia.sk/dielo/SVK:SNG.A_336-32?collection=24",
+           src: "http://www.webumenia.sk/images/diela/SNG/60/SVK_SNG.A_336-32/SVK_SNG.A_336-32.jpeg",
+           text: "Ján Svetlík - 1956",
+           target: "imagediv"
+         });
+         example.image({
+           // seconds
+           start: 32,
+           // seconds
+           end: 40,
+           href: "http://www.webumenia.sk/dielo/SVK:SNG.A_336-32?collection=24",
+           src: "http://www.webumenia.sk/images/diela/SNG/57/SVK_SNG.A_336-66/SVK_SNG.A_336-66.jpeg",
+           text: "Ján Svetlík - 1951-1959",
+           target: "imagediv"
+         });
+      }, false);
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>príbehy umenia</h2>
+      <h1>Slavín</h1>
+      <p>Images synched to video</p>
+      <div id="video" style="width: 500px; height: 281px;" ></div>
+      <div id="imagediv" style="width: 500px; height: 281px;"></div>
+    </div>
+  </body>
+</html>
